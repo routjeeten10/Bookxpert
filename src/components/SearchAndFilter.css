@@ -1,0 +1,101 @@
+.search-filter-container {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+}
+
+.search-box {
+  flex: 1;
+  min-width: 200px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.filter-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 10;
+  overflow: visible;
+}
+
+.filter-group select {
+  position: relative;
+}
+
+.filter-select {
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+  min-width: 150px;
+  position: relative;
+  z-index: 10;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 40px;
+}
+
+.filter-select:focus,
+.filter-select:active {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  z-index: 1000;
+  position: relative;
+}
+
+.filter-select option {
+  padding: 12px 16px;
+  background: white;
+  color: #333;
+  font-size: 14px;
+}
+
+/* Ensure dropdown is not clipped */
+.filter-select:focus {
+  overflow: visible;
+}
+
+/* Fix for browsers that clip select dropdowns */
+@supports (-webkit-appearance: none) {
+  .filter-select {
+    overflow: visible;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-filter-container {
+    width: 100%;
+  }
+
+  .search-box {
+    min-width: 100%;
+  }
+}
